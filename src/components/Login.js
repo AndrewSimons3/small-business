@@ -16,13 +16,13 @@ const Login = () => {
   return (
     <div>
          <div className="App">
-      <form onSubmit={userLoggedIn}>
+      <form>
         <br />
         <TextField id="standard-basic" label="Username*"style={{width: "40%"}}/>
         <br />
         <TextField id="standard-basic" label="Password*" style={{width: "40%"}} />
         <br />
-        <Button type="submit" variant="contained" color="inherit" style={{margin: "30px", width:"40%"}} >
+        <Button onClick={userLoggedIn} type="submit" variant="contained" color="inherit" style={{margin: "30px", width:"40%"}} >
           Login
         </Button>
       </form>

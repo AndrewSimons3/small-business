@@ -5,7 +5,7 @@ const Listings = () => {
   return(
 
     <div>
-      <NavBar></NavBar>
+      Hello World
     </div>
   )
 }

@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-
+import { checkAuth } from '../checkAuth'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -14,12 +14,14 @@ const useStyles = makeStyles((theme) => ({
  
   title: {
     flexGrow: 1,
-    marginRight: 1000
+    display: "flex"
   },
 }));
 
 export default function ButtonAppBar() {
   const classes = useStyles();
+
+  console.log(checkAuth())
 
   return (
     <div className={classes.root}>

@@ -1,15 +1,21 @@
 import React from 'react';
 import './App.css';
-import ButtonAppBar from './components/NavBar';
-import Login from './components/Login'
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './redux/store'
+import Router from './Router'
+import ButtonAppBar from './components/NavBar'
+
 
 
 function App() {
   return (
-    <div className="App">
-      <ButtonAppBar></ButtonAppBar>
-      <Login></Login>
-    </div>
+    <Provider store={store}>
+    <BrowserRouter>
+      <ButtonAppBar />
+      <Router />
+    </BrowserRouter>
+  </Provider>
   );
 }
 
