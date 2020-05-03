@@ -2,6 +2,7 @@ import React from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom'
+import ButtonAppBar from './NavBar'
 
 
 const Login = () => {
@@ -15,6 +16,7 @@ const Login = () => {
   };
   return (
     <div>
+      <ButtonAppBar loggedIn={false}></ButtonAppBar>
          <div className="App">
       <form>
         <br />

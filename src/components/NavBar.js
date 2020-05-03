@@ -4,7 +4,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { checkAuth } from '../checkAuth'
+import { Link } from 'react-router-dom';
+import { logOut } from '../checkAuth';
+
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -18,10 +21,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
+  const isAuthenticated = props.loggedIn
+  const loginButtonText = isAuthenticated ? "Logout" : "Login"
   const classes = useStyles();
 
-  console.log(checkAuth())
+  console.log(isAuthenticated)
 
   return (
     <div className={classes.root}>
@@ -30,8 +35,9 @@ export default function ButtonAppBar() {
           <Typography edge="start" variant="h6" className={classes.title}>
             Austin Small Business
           </Typography>
-          <Button color="inherit">Listings</Button>
-          <Button color="inherit">Login</Button>
+          <Link className='link' to='/'>Listings</Link>
+          {isAuthenticated && (<Link className='link'>Add</Link>)}
+          <Link className='link' onClick={logOut} to='/login'>{loginButtonText}</Link>
         </Toolbar>
       </AppBar>
     </div>
