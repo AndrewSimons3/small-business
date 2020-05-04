@@ -2,13 +2,13 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router'
 import Listings from './containers/Listings'
 import Login from './components/Login'
-import Add from './components/Add'
+import Add from './containers/Add'
 import { checkAuth } from './checkAuth'
 import ButtonAppBar from './components/NavBar'
+import Details from './containers/Details'
 
 const ProtectedRoute = ({component: Component, ...rest}) => {
   const comp = Component
-  console.log(rest)
   return (
       <Route
       {...rest}
@@ -20,8 +20,6 @@ const ProtectedRoute = ({component: Component, ...rest}) => {
 }
 
 const UnProtectedRoute = ({component: Component, ...rest}) => {
-  const comp = Component
-  console.log(rest)
   return (
       <Route
       {...rest}
@@ -37,6 +35,7 @@ const Router = () => {
   return (
       <Switch>
           <Route path="/login" component={Login} />
+          <UnProtectedRoute path="/listing/:id" component={Details} />
           <UnProtectedRoute exact path="/" component={Listings} />
           <ProtectedRoute path="/add" component={Add} />
       </Switch>

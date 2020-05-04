@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { logOut } from '../checkAuth';
+import Add from './Add';
 
 
 
@@ -36,7 +36,7 @@ export default function ButtonAppBar(props) {
             Austin Small Business
           </Typography>
           <Link className='link' to='/'>Listings</Link>
-          {isAuthenticated && (<Link className='link'>Add</Link>)}
+          {isAuthenticated && (<Link className='link' onClick={Add} to='/add'>Add</Link>)}
           <Link className='link' onClick={logOut} to='/login'>{loginButtonText}</Link>
         </Toolbar>
       </AppBar>
