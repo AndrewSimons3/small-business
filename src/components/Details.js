@@ -9,7 +9,7 @@ const Details = (props) => {
   console.log(businessDetails)
 
   return (
-    <Container maxWidth="sm">
+    <Container>
       <h2>{businessDetails.name}</h2>
       <h3>{businessDetails.address}</h3>
       <h3>{businessDetails.hours}</h3>
