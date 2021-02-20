@@ -25,7 +25,7 @@ const Login = () => {
         <TextField id="standard-basic" label="Password*" style={{width: "40%"}} />
         <br />
         <Button onClick={userLoggedIn} type="submit" variant="contained" color="inherit" style={{margin: "30px", width:"40%"}} >
-          Login
+          Login...
         </Button>
       </form>
     </div> 
